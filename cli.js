@@ -123,7 +123,7 @@ const runOverwrite = (input, opts) => {
 	});
 };
 
-if ((cli.input.length !== 0 && process.stdin.isTTY) || (cli.input.length !== 0 && cli.flags.overwrite)) {
+if ((cli.input.length === 0 && process.stdin.isTTY) || (cli.input.length === 0 && cli.flags.overwrite)) {
 	console.error('Specify at least one filename');
 	process.exit(1);
 }
