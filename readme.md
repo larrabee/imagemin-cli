@@ -1,4 +1,4 @@
-# imagemin-cli [![Build Status](https://travis-ci.org/imagemin/imagemin-cli.svg?branch=master)](https://travis-ci.org/imagemin/imagemin-cli)
+# imagemin-cli
 
 > Minify images
 
@@ -8,7 +8,7 @@
 ## Install
 
 ```
-$ npm install --global imagemin-cli
+$ npm install --global imagemin-clif
 ```
 
 
@@ -31,6 +31,9 @@ $ imagemin --help
     $ imagemin foo.png > foo-optimized.png
     $ cat foo.png | imagemin > foo-optimized.png
     $ imagemin --plugin=pngquant foo.png > foo-optimized.png
+    $ imagemin --overwrite foo.png
+    $ imagemin --overwrite fixtures/*
+    $ find fixtures/ -name 'test.*' |xargs imagemin --overwrite
 ```
 
 
