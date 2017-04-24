@@ -8,6 +8,9 @@ const imagemin = require('imagemin');
 const ora = require('ora');
 const plur = require('plur');
 const stripIndent = require('strip-indent');
+const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminPngquant = require('imagemin-pngquant');
+const imageminSvgo = require('imagemin-svgo');
 
 const cli = meow(`
 	Usage
@@ -111,7 +114,8 @@ const runOverwrite = (input, opts) => {
 		const origFile = fs.readFileSync(file);
 		imagemin.buffer(origFile, {plugins: [
                                           imageminMozjpeg({quality: 85}),
-                                          imageminPngquant()
+                                          imageminPngquant(),
+																					imageminSvgo()
                                         ]
                     })
 			.then(buff => {
