@@ -109,7 +109,11 @@ const runOverwrite = (input, opts) => {
 	const use = requirePlugins(arrify(opts.plugin));
 	input.forEach(file => {
 		const origFile = fs.readFileSync(file);
-		imagemin.buffer(origFile, {use})
+		imagemin.buffer(origFile, {plugins: [
+                                          imageminMozjpeg({quality: 85}),
+                                          imageminPngquant()
+                                        ]
+                    })
 			.then(buff => {
 				fs.writeFile(file, buff, err => {
 					if (err) {
