@@ -114,7 +114,7 @@ const runOverwrite = (input, opts) => {
 		const origFile = fs.readFileSync(file);
 		imagemin.buffer(origFile, {plugins: [
                                           imageminMozjpeg({quality: 85}),
-                                          imageminPngquant(),
+                                          imageminPngquant({quality: "60-85"}),
 																					imageminSvgo()
                                         ]
                     })
