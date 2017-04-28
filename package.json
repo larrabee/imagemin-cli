@@ -1,6 +1,6 @@
 {
   "name": "imagemin-clif",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Minify images",
   "license": "MIT",
   "repository": "larrabee/imagemin-clif",
@@ -53,6 +53,7 @@
     "arrify": "^1.0.1",
     "get-stdin": "^5.0.1",
     "imagemin": "^5.0.0",
+    "imagemin-giflossy": "^5.1.10",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.0",
     "imagemin-svgo": "^5.2.1",

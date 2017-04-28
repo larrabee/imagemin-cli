@@ -11,6 +11,7 @@ const stripIndent = require('strip-indent');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
 const imageminSvgo = require('imagemin-svgo');
+const imageminGiflossy = require('imagemin-giflossy');
 
 const cli = meow(`
 	Usage
@@ -114,8 +115,9 @@ const runOverwrite = (input, opts) => {
 		const origFile = fs.readFileSync(file);
 		imagemin.buffer(origFile, {plugins: [
                                           imageminMozjpeg({quality: 85}),
-                                          imageminPngquant({quality: "60-85"}),
-																					imageminSvgo()
+                                          imageminPngquant({quality: "60-85"}	),
+																					imageminSvgo(),
+																					imageminGiflossy({lossy: 50})
                                         ]
                     })
 			.then(buff => {
